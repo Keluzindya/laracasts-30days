@@ -13,7 +13,8 @@
                         <x-form-label for="email">Email</x-form-label>
 
                         <div class="mt-2">
-                            <x-form-input name="email" id="email" type="email"  />
+{{--                            if emial and password is not validate, the old email will still display for user to log in--}}
+                            <x-form-input name="email" id="email" type="email" :value="old('email')" />
 
                             <x-form-error name="email" />
                         </div>
