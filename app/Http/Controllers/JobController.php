@@ -30,6 +30,8 @@ class JobController extends Controller
 
     public function store()
     {
+        // getb auth user
+        // get employer with matching user id
         request()->validate([
             'title' => ['required', 'min:3'],
             'salary' => ['required']
@@ -38,7 +40,7 @@ class JobController extends Controller
         Job::create([
             'title' => request('title'),
             'salary' => request('salary'),
-            'employer_id' => 1
+            'employer_id' => 1 // use the employer id
         ]);
 
         return redirect('/jobs');
